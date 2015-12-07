@@ -1,0 +1,17 @@
+<div>
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <tr><th>User Name</th><th>Company Name</th><th>Job Description</th><</tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><a href="/accounts/?account_id=<%= rs[i].UserID %>"> <%= rs[i].FirstName %> <%= rs[i].LastName %></a></td>
+            <td><%= rs[i].CompanyName %></td>
+            <td><%= rs[i].description %></td>
+
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No schools are entered into the Company database table.
+    <% } %>
+</div>

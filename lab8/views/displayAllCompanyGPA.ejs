@@ -1,0 +1,18 @@
+<div>
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <tr><th>CompanyName</th><th>MinGPA</th><th>MaxGPA</th><th>AvgGPA</th><th>Count</th></tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><a href="/companys/?company_id=<%= rs[i].company_id %>"> <%= rs[i].CompanyName %> </a></td>
+            <td><%= rs[i].MinGPA %></td>
+            <td><%= rs[i].MaxGPA %></td>
+            <td><%= rs[i].AvgGPA %></td>
+            <td><%= rs[i].Count %></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No schools are entered into the Company database table.
+    <% } %>
+</div>
