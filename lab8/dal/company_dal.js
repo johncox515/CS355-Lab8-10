@@ -56,7 +56,7 @@ exports.Insert = function(company_info, callback) {
 }
 
 exports.Update = function(company_info, callback) {
-    var query_data = [company_info.name, company_info.address_id, company_info.company_id];
+    var query_data = [company_info.name, company_info.street, company_info.city, company_info.zip, company_info.company_id];
     var query = 'UPDATE Company SET name = ?, street = ?, city = ?, zip = ? WHERE company_id = ?';
     connection.query(query, query_data, function(err, result) {
         if(err){

@@ -1,34 +1,42 @@
-<% include ../partials/header.ejs %>
+<% include ../partials/header.ejs%>
 
-<% if(typeof message !== 'undefined') { %>
-<div class="alert <%= alert_class %>" role="alert"><%= message %></div>
-<% } %>
+<!-- .this is an HTML comment -->
+<!-- .the <form> html tag tells the browser that you are creating a form
+     .the action attribute in <form> is the web page location for where the information will be sent that the user enters
+     .the web url in this example is relative, based on the url in the web browser.  In this example the url in the
+       should be http://localhost:3000/users/create/
 
+       .when the form is submitted it will send the form information to http://localhost:3000/users/save/
+       .if action attribute was /save/, then the information would go to http://localhost:3000/save/
+       .if it was save/, then it would go to http://localhost:3000/create/save/
+       .if it was an absolute url, like http://google.com/, it would send the information to http://google.com/
+       .if the action attribute was an empty string, or wasn't present, the form is submitted back to the same page.
+-->
+<form action="/company/update/">
+    <% /* .this is an EJS comment */ %>
+    <% /* .the <label> tag is for sloppy clickers, so if the click the First Name text it will place their mouse cursor
+     in the firstname input text box.  the for attribute must match the input text box it is associated with.
+     in the first casse it is firstname.
 
-<% if(typeof company !== 'undefined' && company.length == 1) { %>
-<form action="./update" class="col-md-4">
-    <div class="form-group">
-        <label for="street">Name:</label>
-        <input type="text" name="name" id="name" value="<%= company[0].name %>" class="form-control" />
-    </div>
-    <label for="address_id">Address:</label>
-    <select id="address_id" name="address_id">
-        <option></option>
-        <% address.forEach(function(entry) { %>
-        <% var address = entry.street + " " + entry.city + ", " + entry.zip %>
-        <% var selected = "";
-            if(entry.address_id == company[0].address_id) {
-                selected = "selected";
-            }
-        %>
-        <option value="<%= entry.address_id %>" <%=selected %>><%= address %></option>
-        <% }); %>
-    </select>
+     .when the <input> tag's type attribute is set to "text" the browser will render an single input text box
 
-    <input type="hidden" name="company_id" id="company_id" value="<%= company[0].company_id %>" />
+     .the <input> tag's id attribute allows you to interact with it using JavaScript.  We will get to that later.
 
-    <br />
+     .the <input tag's name attribute will be the variable name we use to access the value the user enter's
+     when it is submitted to the web server.
+
+     .the <br /> (break) tag creates a new line.
+     */ %>
+    <label for="street">Street</label> <input type="text" id="street" name="street" /><br />
+    <label for="city">City</label> <input type="text" id="city" name="city" /><br />
+    <label for="zip">Zip Code</label> <input type="text" id="zip" name="zip" /><br />
+
+    <!-- .the <input> password type, obscures the letters the user sees when typing in text. Otherwise it functions
+            exactly as the <input> text type -->
+
+    <!-- .the <input> type submit, creates a button. If the button is within the <form></form> tags, when it is clicked
+          it will send the form information to the url specified in the action attribute.
+    -->
     <input type="submit" />
 </form>
-<% }%>
-<% include ../partials/footer.ejs %>
+<% include ../partials/footer.ejs%>
