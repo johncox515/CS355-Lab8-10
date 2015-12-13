@@ -1,4 +1,4 @@
-<% include partials/header.ejs%>
+<% include ../partials/header.ejs%>
 
 <!-- .this is an HTML comment -->
 <!-- .the <form> html tag tells the browser that you are creating a form
@@ -12,7 +12,7 @@
        .if it was an absolute url, like http://google.com/, it would send the information to http://google.com/
        .if the action attribute was an empty string, or wasn't present, the form is submitted back to the same page.
 -->
-<form action="/schools/save/">
+<form action="/users/save/">
     <% /* .this is an EJS comment */ %>
     <% /* .the <label> tag is for sloppy clickers, so if the click the First Name text it will place their mouse cursor
      in the firstname input text box.  the for attribute must match the input text box it is associated with.
@@ -27,15 +27,17 @@
 
      .the <br /> (break) tag creates a new line.
      */ %>
-    <label for="schoolname">School Name</label> <input type="text" id="schoolname" name="schoolname" /><br />
-    <label for="address">Address</label> <input type="text" id="address" name="address" /><br />
+    <label for="firstname">First Name</label> <input type="text" id="firstname" name="firstname" /><br />
+    <label for="lastname">Last Name</label> <input type="text" id="lastname" name="lastname" /><br />
+    <label for="email">Email</label> <input type="text" id="email" name="email" /><br />
 
     <!-- .the <input> password type, obscures the letters the user sees when typing in text. Otherwise it functions
             exactly as the <input> text type -->
+    <label for="password">Pasword</label> <input type="password" id="password" name="password" /><br />
 
     <!-- .the <input> type submit, creates a button. If the button is within the <form></form> tags, when it is clicked
           it will send the form information to the url specified in the action attribute.
     -->
     <input type="submit" />
 </form>
-<% include partials/footer.ejs%>
+<% include ../partials/footer.ejs%>

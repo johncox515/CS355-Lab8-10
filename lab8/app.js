@@ -36,6 +36,7 @@ app.use('/userjob', userjobs);
 app.use('/users/create', users);
 app.use('/schools/create', schools);
 app.use('/companys/create', companys);
+app.use('/accounts/create', accounts);
 app.use('/skills',skills);
 
 // catch 404 and forward to error handler

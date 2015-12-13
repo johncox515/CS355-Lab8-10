@@ -6,7 +6,7 @@ router.get('/all', function(req, res) {
   accountDal.GetAll(function (err, result) {
           if (err) throw err;
           //res.send(result);
-          res.render('displayAllAccounts.ejs', {rs: result});
+          res.render('account/displayAllAccounts.ejs', {rs: result});
         }
     );
 });
@@ -15,7 +15,7 @@ router.get('/', function (req, res) {
   accountDal.GetByID(req.query.account_id, function (err, result) {
           if (err) throw err;
 
-          res.render('displayAccountInfo.ejs', {rs: result, account_id: req.query.account_id});
+          res.render('account/displayAccountInfo.ejs', {rs: result, account_id: req.query.account_id});
         }
     );
 });

@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/create', function (req, res, next) {
-  res.render('userFormCreate.ejs');
+  res.render('account/userFormCreate.ejs');
 
 });
 

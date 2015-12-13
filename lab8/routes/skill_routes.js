@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
     res.send('respond with a resource');
 });
 router.get('/create', function (req, res, next) {
-    res.render('skillFormCreate.ejs');
+    res.render('skill/skillFormCreate.ejs');
 
 });
 

@@ -6,7 +6,7 @@ router.get('/all', function(req, res) {
     companyDal.GetAll(function (err, result) {
             if (err) throw err;
             //res.send(result);
-            res.render('displayAllCompanyGPA.ejs', {rs: result});
+            res.render('company/displayAllCompanyGPA.ejs', {rs: result});
         }
     );
 });
@@ -15,13 +15,13 @@ router.get('/', function (req, res) {
     companyDal.GetByID(req.query.company_id, function (err, result) {
             if (err) throw err;
 
-            res.render('displayCompanyGPAInfo.ejs', {rs: result, company_id: req.query.company_id});
+            res.render('company/displayCompanyGPAInfo.ejs', {rs: result, company_id: req.query.company_id});
         }
     );
 });
 
 router.get('/create', function (req, res, next) {
-    res.render('companyFormCreate.ejs');
+    res.render('company/companyFormCreate.ejs');
 
 });
 

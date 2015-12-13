@@ -6,7 +6,7 @@ router.get('/all', function(req, res) {
     schoolDal.GetAll(function (err, result) {
             if (err) throw err;
             //res.send(result);
-            res.render('displayAllSchools.ejs', {rs: result});
+            res.render('school/displayAllSchools.ejs', {rs: result});
         }
     );
 });
@@ -15,13 +15,13 @@ router.get('/', function (req, res) {
     schoolDal.GetByID(req.query.school_id, function (err, result) {
             if (err) throw err;
 
-            res.render('displaySchoolInfo.ejs', {rs: result, school_id: req.query.school_id});
+            res.render('school/displaySchoolInfo.ejs', {rs: result, school_id: req.query.school_id});
         }
     );
 });
 
 router.get('/create', function (req, res, next) {
-    res.render('schoolFormCreate.ejs');
+    res.render('school/schoolFormCreate.ejs');
 
 });
 
@@ -40,3 +40,4 @@ router.get('/save', function(req, res, next) {
 })
 
 module.exports = router;
+
