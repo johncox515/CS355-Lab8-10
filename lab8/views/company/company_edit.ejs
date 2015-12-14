@@ -27,9 +27,14 @@
 
      .the <br /> (break) tag creates a new line.
      */ %>
-    <label for="street">Street</label> <input type="text" id="street" name="street" /><br />
-    <label for="city">City</label> <input type="text" id="city" name="city" /><br />
-    <label for="zip">Zip Code</label> <input type="text" id="zip" name="zip" /><br />
+
+    <label for="street">Street</label> <input type="text" id="street" value="<%= company[0].street %> " name="street" /><br />
+    <label for="city">City</label> <input type="text" id="city" value="<%= company[0].city %> " name="city" /><br />
+    <label for="zip">Zip Code</label> <input type="text" id="zip" value="<%= company[0].zip %> "name="zip" /><br />
+
+    <input type="hidden" name="company_id" id="company_id" value="<%= company[0].company_id %>" />
+
+
 
     <!-- .the <input> password type, obscures the letters the user sees when typing in text. Otherwise it functions
             exactly as the <input> text type -->

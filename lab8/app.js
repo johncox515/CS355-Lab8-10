@@ -40,7 +40,7 @@ app.use('/schools/create', schools);
 app.use('/companys/create', companys);
 app.use('/accounts/create', accounts);
 app.use('/skills',skills);
-app.use('/company', company)
+app.use('/company', company);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
