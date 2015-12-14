@@ -1,0 +1,22 @@
+<div>
+    <% if(rs.length > 0) { %>
+    <table border="1">
+        <!-- &nbsp is HTML syntax for a space it stands for non break space -->
+        <tr><th>Name</th><th>Address</th><th>&nbsp;</th></tr>
+        <% for (var i=0; rs.length > i; i++) { %>
+        <tr>
+            <td><a href="/school/edit?school_id=<%= rs[i].school_id %>"> <%= rs[i].name %></a></td>
+            <% var address = rs[i].address; %>
+            <td><%= address %></td>
+            <td><a href="/school/delete?school_id=<%= rs[i].school_id %>&name=<%= rs[i].name %>">Delete</a></td>
+        </tr>
+        <% } %>
+    </table>
+    <% } else { %>
+    No companies are entered into the company database table.
+    <% } %>
+</div>
+
+<div style="margin-top:10px;">
+    <a href="/schools/create">Create New School</a>
+</div>
